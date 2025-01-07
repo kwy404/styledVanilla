@@ -38,8 +38,6 @@ createStyledComponent('footer-component', 'footer', {
   padding: '10px'
 });
 
-// Adicionando 10 novos componentes
-
 createStyledComponent('badge-component', 'span', {
   background: 'orange',
   color: 'white',
