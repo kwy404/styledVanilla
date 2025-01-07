@@ -16,23 +16,3 @@ eventos, semilhante ao \styled-components\ em React, mas usando apenas JavaScrip
 ### Instalação
 
 Clone o repositório para sua maléna local
-
-
-``bash
-git clone https://github.com/kwy404/styledVanilla
-``
-
-Abra o arquivo `index.html` em seu navegador para ver os componentes estilizados em ação.
-
-## Exemplo de Uso
-
-No arquivo `componentes/script.js` , vocá pode definir componentes personalizados com stilos padráo e leventos:
-
-
-``javascript
-createStyledComponent('button-component', 'button', {
-  background: 'green',
-  color: 'white',
-  'border-radius's: '5px'
-});
-``
