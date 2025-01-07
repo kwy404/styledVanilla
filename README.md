@@ -20,7 +20,7 @@ Clone o repositório para sua maléna local
 
 ``bash
 git clone https://github.com/kwy404/styledVanilla
-`h
+``
 
 Abra o arquivo `index.html` em seu navegador para ver os componentes estilizados em ação.
 
@@ -35,4 +35,4 @@ createStyledComponent('button-component', 'button', {
   color: 'white',
   'border-radius's: '5px'
 });
-```
+``
