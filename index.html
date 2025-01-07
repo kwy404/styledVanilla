@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyledVanilla Example</title>
+  <style>
+    /* Adicione aqui qualquer estilo global, se necessário */
+  </style>
+</head>
+<body>
+  <br/>
+  <!-- Defina os elementos personalizados no HTML com atributos e eventos -->
+  <header-component color="red" background="lightblue" padding="20px" 
+    @mouseenter="background: blue"
+    @mouseleave="background: green"
+  >
+    This is a custom header!
+  </header-component>
+
+  <box-component border="1px solid black" margin="10px" padding="10px">
+    This is a custom box component!
+  </box-component>
+
+  <button-component @click="background: blue" background="green" color="white" border-radius="5px">
+    Click Me!
+  </button-component>
+
+  <card-component border="2px solid gray" padding="15px" margin="20px" background="#f9f9f9">
+    This is a custom card component!
+  </card-component>
+
+  <alert-component background="yellow" color="black" padding="10px" border-radius="3px">
+    This is a custom alert!
+  </alert-component>
+
+  <footer-component background="darkblue" color="white" padding="15px">
+    This is a custom footer!
+  </footer-component>
+
+  <script src="./styled.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
