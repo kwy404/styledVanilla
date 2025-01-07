@@ -37,3 +37,79 @@ createStyledComponent('footer-component', 'footer', {
   color: 'white',
   padding: '10px'
 });
+
+// Adicionando 10 novos componentes
+
+createStyledComponent('badge-component', 'span', {
+  background: 'orange',
+  color: 'white',
+  padding: '5px 10px',
+  'border-radius': '12px'
+});
+
+createStyledComponent('input-component', 'input', {
+  border: '1px solid #ccc',
+  padding: '10px',
+  width: '200px'
+});
+
+createStyledComponent('progress-component', 'progress', {
+  background: '#ddd',
+  color: 'blue',
+  height: '20px',
+  width: '100%'
+});
+
+createStyledComponent('tooltip-component', 'span', {
+  background: 'black',
+  color: 'white',
+  padding: '5px',
+  'border-radius': '4px'
+});
+
+createStyledComponent('list-component', 'ul', {
+  background: 'lightgreen',
+  padding: '10px',
+  border: '1px solid green'
+});
+
+createStyledComponent('menu-component', 'nav', {
+  background: 'lightgray',
+  padding: '15px',
+  border: '1px solid gray'
+});
+
+createStyledComponent('quote-component', 'blockquote', {
+  color: 'darkred',
+  'font-style': 'italic',
+  padding: '10px'
+});
+
+createStyledComponent('nav-component', 'nav', {
+  background: 'navy',
+  color: 'white',
+  padding: '10px'
+});
+
+createStyledComponent('modal-component', 'div', {
+  background: 'white',
+  color: 'black',
+  padding: '20px',
+  'box-shadow': '0 4px 8px rgba(0, 0, 0, 0.1)'
+});
+
+createStyledComponent('card-header-component', 'div', {
+  background: 'lightgray',
+  padding: '10px',
+  'font-weight': 'bold'
+});
+
+createStyledComponent('card-body-component', 'div', {
+  padding: '15px'
+});
+
+createStyledComponent('card-footer-component', 'div', {
+  background: 'lightgray',
+  padding: '10px',
+  'text-align': 'right'
+});

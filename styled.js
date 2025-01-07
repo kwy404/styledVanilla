@@ -17,6 +17,10 @@ function createStyledComponent(tagName, elementType, defaultStyles = {}) {
             this.render();
         }
 
+        connectedCallback() {
+            this.initializeOnload();
+        }
+
         render() {
             const styles = {
                 ...defaultStyles
@@ -38,16 +42,16 @@ function createStyledComponent(tagName, elementType, defaultStyles = {}) {
                 .join(' ');
 
             this.shadowRoot.innerHTML = `
-          <style>
-            :host {
-              display: block;
-              ${styleString}
-            }
-          </style>
-          <${elementType} part="content">
-            <slot></slot>
-          </${elementType}>
-        `;
+                <style>
+                    :host {
+                        display: block;
+                        ${styleString}
+                    }
+                </style>
+                <${elementType} part="content">
+                    <slot></slot>
+                </${elementType}>
+            `;
 
             // Adiciona listeners de eventos
             this.addEventListeners();
@@ -57,6 +61,9 @@ function createStyledComponent(tagName, elementType, defaultStyles = {}) {
             for (const attr of this.attributes) {
                 if (attr.name.startsWith('@')) {
                     const eventName = attr.name.substring(1);
+                    if (eventName === 'onload') {
+                        continue; // Ignore @onload here
+                    }
                     const styleChanges = attr.value.split(';').reduce((acc, rule) => {
                         const [key, value] = rule.split(':').map(s => s.trim());
                         if (key && value) {
@@ -73,6 +80,14 @@ function createStyledComponent(tagName, elementType, defaultStyles = {}) {
                 }
             }
         }
+
+        initializeOnload() {
+            const onloadAttr = this.getAttribute('@onload');
+            if (onloadAttr) {
+                const onloadFunction = new Function(onloadAttr);
+                onloadFunction.call(this);
+            }
+        }
     }
 
     customElements.define(tagName, StyledComponent);
@@ -87,6 +102,7 @@ function observeNewElements() {
                     if (node.nodeType === 1 && node.tagName.includes('-COMPONENT')) {
                         // Re-renderiza o componente quando ele é adicionado dinamicamente
                         node.render && node.render();
+                        node.initializeOnload && node.initializeOnload();
                     }
                 });
             }

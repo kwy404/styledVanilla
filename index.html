@@ -22,7 +22,16 @@
     This is a custom box component!
   </box-component>
 
-  <button-component @click="background: blue" background="green" color="white" border-radius="5px">
+  <button-component background="green" color="white" border-radius="5px"
+    @onload="
+    const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange'];
+    let currentIndex = 0;
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % colors.length;
+      this.style.background = colors[currentIndex];
+    }, 1000);
+    "
+    @click="background: blue">
     Click Me!
   </button-component>
 
@@ -37,6 +46,64 @@
   <footer-component background="darkblue" color="white" padding="15px">
     This is a custom footer!
   </footer-component>
+
+  <!-- Novos componentes -->
+  <badge-component background="orange" color="white" padding="5px 10px" border-radius="12px">
+    New!
+  </badge-component>
+
+  <input-component border="1px solid #ccc" padding="10px" width="200px"></input-component>
+
+  <progress-component background="#ddd" color="blue" height="20px" width="100%">
+    60%
+  </progress-component>
+
+  <tooltip-component background="black" color="white" padding="5px" border-radius="4px">
+    This is a tooltip
+  </tooltip-component>
+
+  <list-component background="lightgreen" padding="10px" border="1px solid green">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </list-component>
+
+  <menu-component background="lightgray" padding="15px" border="1px solid gray">
+    <ul>
+      <li>Menu 1</li>
+      <li>Menu 2</li>
+      <li>Menu 3</li>
+    </ul>
+  </menu-component>
+
+  <quote-component color="darkred" font-style="italic" padding="10px">
+    "This is a custom quote."
+  </quote-component>
+
+  <nav-component background="navy" color="white" padding="10px">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav-component>
+
+  <avatar-component src="path/to/avatar.jpg" border="2px solid #000" border-radius="50%" width="100px" height="100px">
+  </avatar-component>
+
+  <modal-component background="white" color="black" padding="20px" box-shadow="0 4px 8px rgba(0, 0, 0, 0.1)">
+    This is a modal.
+  </modal-component>
+
+  <card-component border="2px solid gray" padding="15px" margin="20px" background="#f9f9f9">
+    <card-header-component background="lightgray" padding="10px" font-weight="bold">
+      Card Header
+    </card-header-component>
+    <card-body-component padding="15px">
+      Card Body Content
+    </card-body-component>
+    <card-footer-component background="lightgray" padding="10px" text-align="right">
+      Card Footer
+    </card-footer-component>
+  </card-component>
 
   <script src="./styled.js"></script>
   <script src="./script.js"></script>
